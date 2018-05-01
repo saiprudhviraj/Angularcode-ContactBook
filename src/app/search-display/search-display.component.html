@@ -1,0 +1,46 @@
+<div>
+    <button routerLink="/ContactDeatilService" routerLinkActive="active" type="submit" style="float:right;margin-top:1%" class="btn btn-default">Home</button>
+</div>
+
+<div class="container">
+  <h1>Search Contacts</h1>
+
+  <div class="form-group">
+    <label class="col-xs-2 control-label" for="SearchDropDown">Field to search </label>
+    <div class="col-xs-4">
+      <select [(ngModel)]="SearchItem">
+        <option *ngFor="let item of items" value={{item.value}}>
+          {{item.name}}
+        </option>
+      </select>
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label class="col-xs-2 control-label" for="SearchTerm">Search term</label>
+    <div class="col-xs-4">
+      <input type="text" class="textBox" [(ngModel)]="Searchterm" name="SearchTerm">
+    </div>
+  </div>
+
+  <button routerLinkActive="active" type="submit" (click)="save()" class="btn btn-default">Submit</button>
+</div>
+
+<p-dataTable emptyMessage="No contacts found" [(value)]="filteredContacts" selectionMode="multiple" resizableColumns="true"
+  [(selection)]="selectedContacts" (onRowDblclick)="onRowDblclick($event)" #dt [responsive]="true" [rows]="20" [paginator]="true"
+  [pageLinks]="3" [rowsPerPageOptions]="[10,20,30,40]" reorderableColumns="true" exportFilename="contactsList" [metaKeySelection]="false"
+  [tableStyle]="{'table-layout':'auto','width':'100%', 'min-width':'200px'}" [style]="{'margin-top':'5%' , 'margin-left':'1%'}"*ngIf="Griddisplay==true">
+
+  <p-header>
+    <div class="header">
+      <div class="select">
+        <p-multiSelect [options]="columnOptions" [(ngModel)]="columns"></p-multiSelect>
+      </div>
+    </div>
+  </p-header>
+  <p-column [style]="{'width':'2%'}" selectionMode="multiple"></p-column>
+  <div *ngFor="let col of columns">
+    <p-column [styleClass]="col.styleClass" [sortable]="true" [field]="col.field" [filter]="true" [header]="col.header"></p-column>
+  </div>
+</p-dataTable>

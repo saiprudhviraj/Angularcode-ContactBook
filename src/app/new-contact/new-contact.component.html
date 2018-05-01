@@ -1,0 +1,89 @@
+<div *ngIf="DoneEntry==true" class="container">
+  <h1>Add New Contact</h1>
+
+  <form [formGroup]="NewForm" #formDir="ngForm">
+    <div [hidden]="formDir.submitted">
+      <div class="form-group">
+        <label class="col-xs-2 control-label" for="name">First Name</label>
+        <div class="col-xs-4">
+          <input id="name" type="text"class="textBox" [(ngModel)]="UserInfo.FirstName" formControlName="name" required>
+        </div>
+
+        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+          <div *ngIf="name.errors.required">
+            User name is required.
+          </div>
+          <div *ngIf="name.errors.minlength">
+            Username must be at least 8 characters long.
+          </div>
+        </div>
+
+        <label class="col-xs-2 control-label" for="LastName">Last Name</label>
+        <div class="col-xs-4">
+          <input type="text" class="textBox" [(ngModel)]="UserInfo.LastName" name="LastName">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-xs-2 control-label" for="PrimaryContact">Primary Contact</label>
+        <div class="col-xs-4">
+          <input id="PrimaryContact" type="number" class="textBox"  [(ngModel)]="UserInfo.PrimaryContact" formControlName="PrimaryContact"
+            required>
+        </div>
+
+        <div *ngIf="PrimaryContact.invalid && (PrimaryContact.dirty || PrimaryContact.touched)" class="alert alert-danger">
+          <div *ngIf="PrimaryContact.errors.required">
+            PrimaryContactis required.
+          </div>
+          <div *ngIf="PrimaryContact.errors.minlength">
+            PrimaryContact must be at least 10 characters long.
+          </div>
+        </div>
+        <label class="col-xs-2 control-label" for="Outlook">Outlook</label>
+        <div class="col-xs-4">
+          <input type="email" class="textBox" [(ngModel)]="UserInfo.Outlook" name="Outlook">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-xs-2 control-label" for="Home">Home</label>
+        <div class="col-xs-4">
+          <input type="number" class="textBox" [(ngModel)]="UserInfo.Home" name="Home">
+        </div>
+        <label class="col-xs-2 control-label" for="Skype">Skype</label>
+        <div class="col-xs-4">
+          <input type="email" class="textBox" [(ngModel)]="UserInfo.Skype" name="Skype">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-xs-2 control-label" for="twitter">Twitter</label>
+        <div class="col-xs-4">
+          <input type="email" class="textBox" [(ngModel)]="UserInfo.twitter" name="twitter">
+        </div>
+        <label class="col-xs-2 control-label" for="Notes">Notes</label>
+        <div class="col-xs-4">
+          <input type="email" class="textBox" [(ngModel)]="UserInfo.Notes" name="Notes">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-xs-2 control-label" for="EmailAddress">EmailAddress</label>
+        <div class="col-xs-4">
+          <input type="text" class="textBox" [(ngModel)]="UserInfo.EmailAddress" name="EmailAddress">
+        </div>
+        <label class="col-xs-2 control-label" for="StreetAddress">StreetAddress</label>
+        <div class="col-xs-4">
+          <input type="text" class="textBox" [(ngModel)]="UserInfo.StreetAddress" name="StreetAddress">
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-default" (click)="save()" [disabled]="check">Submit</button>
+      <button type="button" class="btn btn-default" (click)="formDir.resetForm({})">Reset</button>
+      <button type="submit" (click)="cancel()" class="btn btn-default">Cancel</button>
+    </div>
+    <div *ngIf="isErrorExists==true">
+      <label style="color:Red"> Contacts already exists on this number {{UserInfo.PrimaryContact}}</label>
+    </div>
+  </form>
+</div>

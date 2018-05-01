@@ -1,0 +1,69 @@
+<div class="container">
+  <h1>Contact Details</h1>
+
+  <div class="form-group">
+    <div class="col-xs-12">
+      <a class="btn btn-default" style="width:12%" (click)="Imagechange()">
+        <img class="profileImg" [src]="displayImagepath" alt="display pic" border="5">
+      </a>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="textlabel" for="name">First Name</label>
+    <div class="col-xs-4">
+      <input class="textBox" type="text" [disabled]="true" [(ngModel)]="UserInfo.FirstName">
+    </div>
+    <label class="textlabel" for="LastName"> Last Name</label>
+    <div class="col-xs-4">
+      <input class="textBox" type="text" [disabled]="true" [(ngModel)]="UserInfo.LastName" name="LastName">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="textlabel" for="PrimaryContact">Primary Contact</label>
+    <div class="col-xs-4">
+      <input class="textBox" type="number" [disabled]="true" [(ngModel)]="UserInfo.PrimaryContact" name="PrimaryContact">
+    </div>
+    <label class="textlabel" for="Outlook">Outlook</label>
+    <div class="col-xs-4">
+      <input class="textBox" type="email" [disabled]="true" [(ngModel)]="UserInfo.Outlook" name="Outlook">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="textlabel" for="Home">Home</label>
+    <div class="col-xs-4">
+      <input class="textBox" type="number" class="textBox"  [disabled]="true" [(ngModel)]="UserInfo.Home" name="Home">
+    </div>
+    <label class="textlabel" for="Skype">Skype</label>
+    <div class="col-xs-4">
+      <input class="textBox" type="email" class="textBox"  [disabled]="true" [(ngModel)]="UserInfo.Skype" name="Skype">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="textlabel" for="twitter">Twitter</label>
+    <div class="col-xs-4">
+      <input class="textBox" type="email" class="textBox"  [disabled]="true" [(ngModel)]="UserInfo.twitter" name="twitter">
+    </div>
+    <label class="textlabel" for="Notes">Notes</label>
+    <div class="col-xs-4">
+      <input class="textBox" type="email" class="textBox"  [disabled]="true" [(ngModel)]="UserInfo.Notes" name="Notes">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="textlabel" for="EmailAddress">EmailAddress</label>
+    <div class="col-xs-4">
+      <input class="textBox" type="text" [disabled]="true" [(ngModel)]="UserInfo.EmailAddress" name="EmailAddress">
+    </div>
+    <label class="textlabel" for="StreetAddress">StreetAddress</label>
+    <div class="col-xs-4">
+      <input class="textBox" type="text" [disabled]="true" [(ngModel)]="UserInfo.StreetAddress">
+    </div>
+  </div>
+
+  <label class="Spacing"></label>
+
+</div>

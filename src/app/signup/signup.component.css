@@ -1,0 +1,26 @@
+.panel-heading{
+    background-color: black;
+    color:white;
+}
+.form-horizontal{
+    background-color: white;
+    height:150%;
+}
+.form-control{
+    width:40%;
+}
+.form-group{
+    margin-left:100px;
+    align-content: center !important;
+}
+.form-group .input-group{
+    margin-top: 5px;
+}
+.panel-heading{
+    font-size: 16px;
+    font-weight: bold;
+}
+.container{
+    width:50%;
+    background-color: grey;
+}

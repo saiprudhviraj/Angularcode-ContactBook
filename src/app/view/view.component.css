@@ -1,0 +1,93 @@
+.cSeparator {
+  height: 15px;
+  color: #0e0606;
+  font-size: 1px;
+  padding-top: 10px;
+}
+
+.MainDialog {
+  width: 100% !important;
+  align-content: flex-start !important;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  z-index: 10;
+}
+
+.ViewPay {
+  color: #000000;
+  font-weight: bold;
+  float: left;
+}
+
+.ViewPayHeader {
+  height: 2px;
+  color: #505050;
+  font-size: 12px;
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: #dddad2;
+  width: 100% !important;
+}
+
+.cExternalTable {
+  width: 1500px;
+  border-collapse: collapse;
+  margin: 2px;
+  padding: 3px;
+  border-color: #c0c0c0;
+}
+
+.rowFields {
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
+.Items {
+  clear: left;
+  text-align: left;
+  width: 117px;
+  padding-right: 0px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #000000;
+  margin-left: 7.5px;
+}
+
+.textBox {
+  width: 147px;
+  color: #505050;
+  border: 1px solid #c0c0c0;
+  height: 22px;
+  padding-left: 0px;
+  border-radius: 4px;
+  font-size: 12px !important;
+}
+
+.AmounttextBox {
+  width: 100px !important;
+  color: #505050;
+  border: 1px solid #c0c0c0;
+  height: 22px;
+  padding-left: 0px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.CurrencytextBox {
+  width: 47px !important;
+  color: #505050;
+  border: 1px solid #c0c0c0;
+  font-size: 12px;
+  height: 22px;
+  padding: 0px;
+  border-radius: 4px;
+}
+
+.Closebutton{
+  float:left;
+  height:25px;
+  width:50px;
+  margin-right:5px;
+  margin-bottom:2.5px;
+}

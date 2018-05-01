@@ -1,0 +1,47 @@
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times; </a>
+  <a class="SideDetails" (click)="ContactList()">Contact List</a>
+  <a class="SideDetails" routerLink="/SearchDisplay">Search Contact</a>
+  <a href="https://arborgold.com" target="_blank" class="SideDetails">About Us</a>
+</div>
+
+<div class="row">
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="col-md-3">
+        <p class="Brands"> Contact 
+          <a href="#" class="navbar-link">Book</a>
+          <span class="ToggleSidebar" (click)="openNav()">&#9776;</span>
+        </p>
+      </div>
+      <div class="col-md-2 col-md-offset-6 col-xs-3 col-xs-offset-4">
+        <button *ngIf="isSignIn==true" type="button" style="float:right;margin-right:5px" (click)="ToggleSignin()" class="btn btn-default navbar-btn">Sign Out</button>
+        <button *ngIf="isSignIn==false" type="button" style="float:right;margin-right:5px" (click)="ToggleSignin()" class="btn btn-default navbar-btn">Sign In</button>
+      </div>
+
+      <div class="col-md-1 col-xs-2">
+        <div class="dropdown">
+          <a>
+            <label *ngIf="isUserLogged==true" type="text">{{DisplayName}}</label>
+          </a>
+          <a class="btn btn-default">
+            <img class="profileImg" [src]="displayImagepath">
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+<div *ngIf="isSignIn==true && active==true">
+  <signup></signup>
+</div>
+
+<div *ngIf="displayContacts==true && isUserLogged==true">
+  <contact-book></contact-book>
+</div>
+
+<div *ngIf="Notclicked==true">
+  <h3 class="LabelonImage1">Check your</h3>
+  <h2 (click)="ContactList()"  class="LabelonImage2">Contact list</h2>
+  <label class="ErrorMessage" *ngIf="DisplayMessage==true">Sorry Bro please Login first </label>
+</div>

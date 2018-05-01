@@ -1,0 +1,24 @@
+body{
+    width:99%;
+    background-image: url('./assets/image/background2.jpg');
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    top:0;
+    bottom: 0;
+    height:100vh;
+    z-index: -10;
+}
+
+.ui-multiselect .ui-multiselect-label{
+    display:inline !important;
+}
+.ui-menu .ui-menuitem .ui-menuitem-link{
+    background-color: white !important;
+}
+.ui-multiselect-panel .ui-widget .ui-widget-content .ui-corner-all .ui-shadow{
+    background-color: white !important;
+}
+.ui-datatable-tablewrapper {
+    background-color: grey;
+}

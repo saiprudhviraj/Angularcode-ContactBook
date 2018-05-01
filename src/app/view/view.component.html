@@ -1,0 +1,71 @@
+<p-dialog header="{{UserName}}" [(visible)]="display" [responsive]="true" (onHide)="closeDialog()" showEffect="fade" [modal]="true"
+  class="MainDialog" [style]="{'width':'100px'}">
+  <table class="cExternalTable" border="1" cellpadding="5">
+    <form>
+      <tr>
+        <td colspan="8" class="cSeparator"></td>
+      </tr>
+      <tr>
+        <td>
+          <table cellpadding="3" cellspacing="0" style="min-width: 1500px;">
+            <tr>
+              <td class="rowFields">
+                <label class="Items" for="name">Name:</label>
+                <input pInputText class="textBox" id="payment_key" name="name" [disabled]="true" [value]="selectedContact.FirstName" />
+              </td>
+              <td>
+                <label class="Items" for="LastName">Last Name:</label>
+                <input pInputText class="textBox" id="LastName" [disabled]="true" [value]="selectedContact.LastName" />
+              </td>
+              <td>
+                <label class="Items" for="Outlook">Outlook:</label>
+                <input pInputText class="textBox" id="" name="Outlook" [disabled]="true" [value]="selectedContact.Outlook" />
+              </td>
+            </tr>
+            <tr>
+              <td class="rowFields">
+                <label class="Items" for="EmailAddress">Email Address:</label>
+                <input pInputText class="textBox" id="EmailAddress" name="EmailAddress" [disabled]="true" [value]="selectedContact.EmailAddress"
+                />
+                <td>
+                  <label class="Items" for="Skype">Skype:</label>
+                  <input pInputText class="textBox" id="Skype" [disabled]="true" [value]="selectedContact.Skype" />
+                </td>
+                <td>
+                  <label class="Items" for="twitter">Twitter:</label>
+                  <input pInputText class="textBox" id="twitter" name="twitter" [disabled]="true" [value]="selectedContact.twitter" />
+                </td>
+            </tr>
+            <tr>
+              <td class="rowFields">
+                <label class="Items" for="PrimaryContact">Primary Contact:</label>
+                <input pInputText class="AmounttextBox" id="PrimaryContact" name="PrimaryContact" [disabled]="true" [value]="selectedContact.PrimaryContact"
+                />
+              </td>
+              <td>
+                <label class="Items" for="Home">Home:</label>
+                <input pInputText class="AmounttextBox" id="Home" name="Home" [disabled]="true" [value]="selectedContact.Home"
+                />
+              </td>
+              <td>
+                <label class="Items" for="Notes">Notes:</label>
+                <input pInputText class="textBox" id="Notes" name="Notes" [disabled]="true" [value]="selectedContact.Notes" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label class="Items" for="StreetAddress">Street Address:</label>
+                <textarea id="StreetAddress" name="StreetAddress" [disabled]="true" [value]="selectedContact.StreetAddress" class="textBox"
+                  pInputTextarea></textarea>
+              </td>
+            </tr>
+          </table>
+          </td>
+      </tr>
+    </form>
+  </table>t
+  <p-footer>
+    <button type="button" pButton style="float:right;margin-right:5px;margin-bottom:2.5px" class="btn btn-default navbar-btn"
+      (click)="closeDialog()">Close</button>
+  </p-footer>
+</p-dialog>
